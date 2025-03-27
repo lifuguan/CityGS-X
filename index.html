@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content=".">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CityGS-𝒳</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./static/css/twentytwenty.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./img/logo.png">
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script src="./static/js/jquery-3.2.1.min.js"></script>
+    <script src="./static/js/jquery.event.move.js"></script>
+    <script src="./static/js/jquery.twentytwenty.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/fontawesome.all.min.js"></script>
+    <style>
+        /* 父容器设置为 flex 布局，确保居中 */
+        .iframe-container {
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center;   /* 垂直居中 */
+            height: 90vh;        /* 父容器高度为视口高度 */
+            margin: -10vh;
+        }
+        iframe {
+            width: 100%;   /* iframe 的宽度 */
+            height: 80%;  /* iframe 的高度 */
+            border: none; /* 去除边框 */
+        }
+
+        /* 页面本身去掉默认边距 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LKCDBW8851"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-LKCDBW8851');
+</script>
+
+
+<body>
+
+
+    <section class="hero teaser ">
+        <div class="hero-body">
+            <div class="container is-max-desktop has-text-centered">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered ">
+                        <h1 class="title is-1 publication-title has-text-centered">
+                            <span style="color: #48a7b5  ;font-weight: bolder;">CityGS-𝒳</span>: A Scalable Architecture for Efficient and Geometrically Accurate Large-Scale Scene Reconstruction
+                        </h1>
+                        <h2 class="title publication-title is-4 has-text-grey"> arXiv 2025</h2>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?hl=en&user=1zDq0q8AAAAJ">
+                                Yuanyuan Gao<sup>1,2,* </sup> </span>
+                            <span class="author-block">
+                                <a href="https://lifuguan.github.io">Hao Li</a><sup>1,* </sup> </span>
+                            <span class="author-block">
+                                <a href="https://github.com/chenttt2001">
+                                Jiaqi Chen<sup>1,* </sup></a> </span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=lKFZwK0AAAAJ&hl=en">Zhihang Zhong
+                            
+                                </a><sup>2, &dagger;</sup>
+                            </span>
+                            <!-- <span class="author-block">
+                                <a href="https://minghanqin.github.io/">Roy
+                                    Qin</a><sup>2,*, &dagger;</sup></span> -->
+                            <span class="author-block">
+                                Zhengyu Zou<sup>1</sup>
+                            </span>
+                            <br>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=lKFZwK0AAAAJ&hl=en">Dingwen
+                                    Zhang</a><sup>1, &dagger;</sup>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://jimmysuen.github.io">Xiao Sun
+                                </a><sup>2</sup>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://openreview.net/profile?id=~Junwei_Han1">Junwei Han</a><sup>1</sup>
+                            </span>
+                            <!-- <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=V-YdQiAAAAAJ&hl=zh-CN">Bohan Li</a><sup>3</sup>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://openreview.net/profile?id=~BingQuan_Dai1">Bingquan Dai</a><sup>2</sup>
+                            </span>
+                            
+                            <span class="author-block">
+                                <a href="https://openreview.net/profile?id=~Junwei_Han1">Junwei Han</a><sup>1</sup>
+                            </span> -->
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Northwestern Polytechnical University</span>
+                            <span class="author-block"><sup>2</sup>Shanghai Artificial Intelligence Laboratory</span>
+                        </div>
+                        <div class="is-size-6 publication-authors">
+                            <p><sup>*</sup> Denotes Equal Contribution <sup>&dagger;</sup> Corresponding author</p>
+                        </div>
+                        <div class="is-size-7 publication-authors">
+                            <span class="author-block">Done in Shanghai Artificial Intelligence Laboratory</span>
+                        </div>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                    
+                            <span class="link-block">
+                            <!-- <a href="http://arxiv.org/abs/2404.01133" -->
+                            <a 
+                                class="external-link button is-normal is-rounded is-dark">
+                                <span class="icon">
+                                    <i class="ai ai-arxiv"></i>
+                                </span>
+                                <span>arXiv</span>
+                            </a>
+                            </span>
+                            
+                            <span class="link-block">
+                            <a href="https://github.com/gyy456/CityGS-X"
+                                class="external-link button is-normal is-rounded is-dark">
+                                <span class="icon">
+                                    <i class="fab fa-github"></i>
+                                </span>
+                                <span>Code</span>
+                                </a>
+                            </span>
+                            <!-- Dataset Link. -->
+                            <!-- <span class="link-block">
+                            <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                                class="external-link button is-normal is-rounded is-dark">
+                                <span class="icon">
+                                    <i class="far fa-images"></i>
+                                </span>
+                                <span>Data</span>
+                                </a> -->
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section ">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full-width">
+
+                    <div class="is-size-5 content has-text-justified">
+                        <b>TL;DR:</b> CityGS-𝒳 is a scalable 3D Gaussian Splatting framework that eliminates partition-and-merge bottlenecks through parallelized hybrid hierarchical representation (PH²-3D) and multi-GPU rendering.
+                    </div>
+                    <img src="./static/images/cityx_teaser.png">
+                    <div class="content has-text-justified"></div>
+                        
+                        <p>We propose <b>CityGS-𝒳</b>, a scalable architecture for efficient and geometrically accurate large-scale scene reconstruction (left). 
+                        The middle column shows qualitative results of rendered depth between our method and CityGS-v2, demonstrating CityGS-𝒳's superior geometric representation with smoother object surfaces. The top-right PSNR chart highlights CityGS-𝒳's superior reconstruction quality across various GPU configurations while significantly reducing time consumption.
+                        The bottom-right section highlights the memory efficiency of CityGS-𝒳, successfully handling high-resolution 4K rendering, while CityGS-v2 encounters out-of-memory issues.</p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+        </div>
+    </section>
+
+
+    <script>
+        $(window).on('load', function () {
+            bulmaCarousel.attach('#results-carousel-horizontal', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                loop: true,
+                autoplay: false,
+            });
+
+            bulmaCarousel.attach('#results-carousel-vertical', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                loop: true,
+                autoplay: false,
+            });
+
+        });
+    </script>
+
+
+    <br><br><br>
+
+    <script>
+        $(window).on('load', function () {
+            bulmaCarousel.attach('#cmp-gt-carousel-horizontal', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                loop: true,
+                autoplay: false,
+            });
+
+        });
+    </script>
+
+
+
+    <section class="hero teaser is-light is-small">
+        <div class="hero-body">
+
+            <div class="container " style="text-align: center; ">
+                <h2 class="title is-3">Qualitative Comparison of Mesh and Texture</h2>
+                <div class="is-size-5 content is-centered ">
+                    <p>In real large-scale scene reconstruction, our method has accurate geometric details compared to the current state-of-the-art methods. Please refer to the paper for a more detailed analysis of the metrics.</p>
+                </div>
+                    <div id="comparison-carousel-horizontal" class="carousel results-carousel">
+
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="40%">
+                                <source src="./static/ours/building/our-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="40%">
+                                <source src="./static/citygs-v2/building/ctv2-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="40%">
+                                <source src="./static/ours/building/our-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="40%">
+                                <source src="./static/citygs-v2/building/ctv2-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/ours/rubble/our-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/citygs-v2/rubble/ctv2-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/ours/rubble/our-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/citygs-v2/rubble/ctv2-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/ours/MatrixCity/our-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/citygs-v2/MatrixCity/ctv2-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/ours/MatrixCity/our-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/citygs-v2/MatrixCity/ctv2-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/ours/residence/our-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/citygs-v2/residence/ctv2-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/ours/residence/our-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/citygs-v2/residence/ctv2-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/ours/sci-art/our-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/citygs-v2/sci-art/ctv2-mesh0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/ours/sci-art/our-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/citygs-v2/sci-art/ctv2-texture0001-0300.mkv" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        $(window).on('load', function () {
+            bulmaCarousel.attach('#comparison-carousel-horizontal', {
+                slidesToScroll: 2,
+                slidesToShow: 2,
+                loop: true,
+                autoplay: false,
+            });
+
+            $(".twentytwenty-container-bottom").twentytwenty({
+                before_label: 'Ours',
+                after_label: 'CityGaussianV2',
+                default_offset_pct: 0.3,
+                no_overlay: false,
+                // move_slider_on_hover: true,
+            });
+
+        });
+    </script>
+
+    <section class="hero teaser is-small">
+        <div class="hero-body">
+
+            <div class="container " style="text-align: center; ">
+                <h2 class="title is-3">Qualitative Comparison of Rendering Depths and RGBs</h2>
+                <div class="is-size-5 content is-centered ">
+                    <p>Our method performs well in novel view synthesis tasks while maintaining good geometry.</p>
+                </div>
+                <div id="comparison-carousel-horizontal" class="carousel results-carousel">
+
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/video-building-depths.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/ctv2-building-depth.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/video-building-renders.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/ctv2-building-rgb.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/video-rubble-depths.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/ctv2-rubble-depth.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/video-rubble-renders.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/ctv2-rubble-rgb.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+            
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/video-residence-depths.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/ctv2-residence-depth.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/video-residence-renders.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/ctv2-residence-rgb.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/video-sci_art-depths.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/ctv2-sci_art-depth.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container twentytwenty-container-bottom">
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/video-sci_art-renders.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="cmpcontent">
+                            <video muted autoplay="autoplay" loop="loop" width="100%">
+                                <source src="./static/video/ctv2-sci_art-rgb.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+
+    <br><br><br>
+
+
+    <script>
+        $(window).on('load', function () {
+            bulmaCarousel.attach('#removal-carousel-horizontal', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                loop: true,
+                autoplay: false,
+            });
+
+            $(".twentytwenty-container-removal").twentytwenty({
+                before_label: 'Gaussian Grouping',
+                after_label: 'Ours',
+                default_offset_pct: 0.3,
+                no_overlay: false,
+            });
+
+        });
+    </script>
+    <section class="hero teaser is-light is-small">
+        <div class="hero-body">
+
+            <div class="container " style="text-align: center; ">
+                <h2 class="title is-3"> Quantitative Results of Novel View Synthesis </h2>
+                <p> ↑: higher is better, ↓: lower is better.
+                The <span style="background-color: #FFB2B2; color: white;">red</span>, <span style="background-color: #FFD9B2; color: white;">orange</span>, and <span style="background-color: #FFFFB2;">yellow</span> colors respectively 
+                denote the best, the second best, and the third best results.
+                <b>Bold</b> denotes the best result in the 'With Geometric Optimization' group. † denotes without applying the decoupled appearance encoding</p>
+                <img src="./static/images/exp.png" width="70%">
+            </div>
+    </section>
+    </section class="hero teaser is-small">
+    <div class="hero-body">
+        <div class="container cmpcontent" style="text-align: center;" >
+            <h2 class="title is-3">Time Consumptions</h2>
+            
+            We compare the time consumptions of different methods on the same dataset. The time consumptions are measured in hours.
+
+            <img src="./static/images/time.png" width="50%">
+        </div>
+    </div>
+    <section class="hero teaser is-small">
+        <div class="hero-body">
+            <div class="container " style="text-align: center; ">
+            <h2 class="title is-3">Qualitative Comparison of Rendering Nomals</h2>
+            <div class="container is-size-5 content is-centered ">
+            <p>Our method demonstrates superior rendering of normals, capturing fine geometric details and smooth surfaces compared to existing techniques.</p>
+            </div>
+            <img src="./static/images/cityx_normal.png" width="80%">
+        </div>
+    </div>
+    </section>
+
+    <section class="hero teaser is-light" id="BibTeX">
+        <div class="hero-body">
+            <div class="column is-three-fifths" style=" margin-top: 30px; margin-bottom: 20px;">
+                <h2 class="title is-3">BibTeX</h2>
+                <div class="is-size-5 content has-text-justified">
+                    If you find our work useful in your research, please consider citing:
+                </div>
+                
+                <pre><code>@article{gao2025citygsx,
+        title={CityGS-$\mathcal{X}$: A Scalable Architecture for Efficient and Geometrically Accurate Large-Scale Scene Reconstruction},
+        author={Yuanyuan Gao and Hao Li and Jiaqi Chen and Zhihang Zhong and Zhengyu Zou and Dingwen Zhang and Xiao Sun and Junwei Han},
+        <!-- journal={arXiv preprint arXiv:2404.01133}, -->
+        year={2025}
+    }</code></pre>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="hero-body">
+            <div class="columns is-two-fifths is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            Website template credit to <a
+                                href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, and is licensed under a
+                            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
