@@ -59,7 +59,7 @@
 }
 
 .twentytwenty-horizontal .twentytwenty-before-label:before, .twentytwenty-horizontal .twentytwenty-after-label:before {
-  top: 50%;
+  top: 10%;
   margin-top: -19px;
 }
 
